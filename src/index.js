@@ -29,6 +29,17 @@ refs.selectBreesd.addEventListener('change', addCatsMarkup);
 
 function addCatsMarkup(e) {
   fetchCatByBreed(e.target.value)
-    .then(cat => console.log(cat))
+    .then(cat => addCatMarkup(cat))
     .catch(err => console.log(err));
+}
+function addCatMarkup(cat) {
+  let catInformation = cat[0].breeds[0];
+  let { name, temperament, description } = catInformation;
+  let { url } = cat[0];
+  selectMarkup = `<img class="cat-img" src="${url}" alt="${name}" />
+      <h2 class="cat-name">${name}</h2>
+      <p class="cat-temp">${description}</p>
+      <p class="cat-desk">${temperament}</p>`;
+
+  refs.infoCatEl.innerHTML = selectMarkup;
 }
