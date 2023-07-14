@@ -54,7 +54,7 @@ function addCatMarkup(cat) {
   let catInformation = cat[0].breeds[0];
   let { name, temperament, description } = catInformation;
   let { url } = cat[0];
-  selectMarkup = `<div><img class="cat-img" src="${url}" alt="${name}" /></div>
+  const selectMarkup = `<div><img class="cat-img" src="${url}" alt="${name}" /></div>
      <div  class="cat-wrap"> <h2 class="cat-name">${name}</h2>
       <p class="cat-temp">${description}</p>
       <p class="cat-desk">${temperament}</p></div>`;
