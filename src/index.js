@@ -15,7 +15,6 @@ const refs = {
 
 fetchBreeds()
   .then(data => {
-    // refs.errorEl.classList.add('js-hide');
     refs.selectBreesd.classList.remove('js-hide');
     refs.loaderEl.classList.add('js-hide');
 
@@ -25,7 +24,6 @@ fetchBreeds()
     console.log(err);
     refs.loaderEl.classList.add('js-hide');
     Notify.failure('Oops! Something went wrong! Try reloading the page!');
-    // refs.errorEl.classList.remove('js-hide');
   });
 
 function addSelectMarkup(data) {
@@ -43,8 +41,6 @@ function addSelectMarkup(data) {
 refs.selectBreesd.addEventListener('change', addCatsMarkup);
 
 function addCatsMarkup(e) {
-  refs.errorEl.classList.add('js-hide');
-
   refs.loaderEl.classList.remove('js-hide');
   fetchCatByBreed(e.target.value)
     .then(cat => addCatMarkup(cat))
@@ -52,7 +48,6 @@ function addCatsMarkup(e) {
       console.log(err);
       refs.loaderEl.classList.add('js-hide');
       Notify.failure('Oops! Something went wrong! Try reloading the page!');
-      // refs.errorEl.classList.remove('js-hide');
     });
 }
 function addCatMarkup(cat) {
@@ -63,6 +58,6 @@ function addCatMarkup(cat) {
      <div  class="cat-wrap"> <h2 class="cat-name">${name}</h2>
       <p class="cat-temp">${description}</p>
       <p class="cat-desk">${temperament}</p></div>`;
-  refs.loaderEl.classList.add('js-hide');
   refs.infoCatEl.innerHTML = selectMarkup;
+  refs.loaderEl.classList.add('js-hide');
 }
