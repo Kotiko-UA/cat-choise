@@ -37,9 +37,9 @@ function addCatMarkup(cat) {
   let { name, temperament, description } = catInformation;
   let { url } = cat[0];
   selectMarkup = `<img class="cat-img" src="${url}" alt="${name}" />
-      <h2 class="cat-name">${name}</h2>
+     <div  class="cat-wrap"> <h2 class="cat-name">${name}</h2>
       <p class="cat-temp">${description}</p>
-      <p class="cat-desk">${temperament}</p>`;
+      <p class="cat-desk">${temperament}</p></div>`;
 
   refs.infoCatEl.innerHTML = selectMarkup;
 }

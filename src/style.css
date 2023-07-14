@@ -1,0 +1,43 @@
+body {
+    margin-left: 20px;
+}
+
+.cat-info {
+    display: flex;
+    gap: 30px;
+    flex-wrap: nowrap;
+
+}
+
+.cat-img {
+    display: block;
+    width: 500px;
+
+}
+
+.cat-wrap {
+    margin: 20px;
+}
+
+.cat-name {
+    display: block;
+    padding-bottom: 30px;
+
+    font-size: 36px;
+
+}
+
+.cat-temp {
+    display: block;
+    padding-bottom: 30px;
+    font-size: 24px;
+}
+
+.cat-desk {
+    display: block;
+    font-size: 24px;
+}
+
+.js-hide {
+    display: none;
+}
